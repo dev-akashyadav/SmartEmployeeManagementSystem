@@ -40,7 +40,7 @@ public class EmployeeEntity {
     @UpdateTimestamp
     private LocalDateTime modifiedAt;
 
-    @OneToOne(mappedBy = "employee",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+    @OneToOne(cascade = CascadeType.ALL)//,fetch = FetchType.LAZY)
     @JoinColumn(name = "addressId",referencedColumnName = "id")
     private AddressEntity empAddressEntity;
 

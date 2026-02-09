@@ -3,6 +3,7 @@ package com.dev_akashyadav.SmartEmployeeManagementSystem.mapper;
 import com.dev_akashyadav.SmartEmployeeManagementSystem.dto.request.EmployeeRequestDTO;
 import com.dev_akashyadav.SmartEmployeeManagementSystem.dto.response.EmployeeResponseDTO;
 import com.dev_akashyadav.SmartEmployeeManagementSystem.entity.EmployeeEntity;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component

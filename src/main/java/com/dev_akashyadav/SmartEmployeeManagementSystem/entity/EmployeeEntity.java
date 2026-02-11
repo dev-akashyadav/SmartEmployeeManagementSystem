@@ -13,7 +13,8 @@ import java.time.LocalDateTime;
 public class EmployeeEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "emp_seq")
+    @SequenceGenerator(name = "emp_seq", sequenceName = "EMPLOYEE_SEQ", allocationSize = 1)
     private Long id;
 
     @Column(length = 15)
@@ -22,7 +23,7 @@ public class EmployeeEntity {
     @Column(length = 15)
     private String empLastName;
 
-    @Column(unique = true)
+    @Column(unique = true, nullable = false)
     private Long empId;
 
     private String empDept;
@@ -31,6 +32,7 @@ public class EmployeeEntity {
 
     private String empPersonalMailId;
 
+    @Column(unique = true)
     private String empWorkEmailId;
 
     @CreationTimestamp
@@ -40,7 +42,7 @@ public class EmployeeEntity {
     @UpdateTimestamp
     private LocalDateTime modifiedAt;
 
-    @OneToOne(cascade = CascadeType.ALL)//,fetch = FetchType.LAZY)
+    @ManyToOne(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
     @JoinColumn(name = "addressId",referencedColumnName = "id")
     private AddressEntity empAddressEntity;
 

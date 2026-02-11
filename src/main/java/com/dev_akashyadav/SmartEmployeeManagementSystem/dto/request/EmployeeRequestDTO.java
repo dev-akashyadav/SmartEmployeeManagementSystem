@@ -27,7 +27,7 @@ public class EmployeeRequestDTO {
 
     private LocalDateTime modifiedAt;
 
-    private AddressEntity empAddressEntity;
+    private AddressRequestDTO empAddress;
 
     public Long getId() {
         return id;
@@ -109,12 +109,12 @@ public class EmployeeRequestDTO {
         this.modifiedAt = modifiedAt;
     }
 
-    public AddressEntity getEmpAddress() {
-        return empAddressEntity;
+    public AddressRequestDTO getEmpAddress() {
+        return empAddress;
     }
 
-    public void setEmpAddress(AddressEntity empAddressEntity) {
-        this.empAddressEntity = empAddressEntity;
+    public void setEmpAddress(AddressRequestDTO empAddress) {
+        this.empAddress = empAddress;
     }
 
     @Override
@@ -130,7 +130,7 @@ public class EmployeeRequestDTO {
                 ", empWorkEmailId='" + empWorkEmailId + '\'' +
                 ", createdAt=" + createdAt +
                 ", modifiedAt=" + modifiedAt +
-                ", empAddressEntity=" + empAddressEntity +
+                ", empAddress=" + empAddress +
                 '}';
     }
 }

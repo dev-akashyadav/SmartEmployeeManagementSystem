@@ -6,10 +6,13 @@ public record ErrorResponseDTO(
         String errorMsg,
         LocalDateTime timestamp,
         int statusCode,
-        String errorType
+        String errorType,
+        String requestURI
 ) {
 
-    public ErrorResponseDTO(String msg, int statusCode, String errorType) {
-        this(msg, LocalDateTime.now(), statusCode, errorType);
+    public ErrorResponseDTO(String msg, int statusCode, String errorType, String requestURI) {
+        this(msg, LocalDateTime.now(), statusCode, errorType, requestURI);
     }
+
+
 }

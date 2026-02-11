@@ -1,5 +1,6 @@
 package com.dev_akashyadav.SmartEmployeeManagementSystem.dto.response;
 
+import com.dev_akashyadav.SmartEmployeeManagementSystem.dto.request.AddressRequestDTO;
 import com.dev_akashyadav.SmartEmployeeManagementSystem.entity.AddressEntity;
 
 import java.time.LocalDate;
@@ -27,7 +28,7 @@ public class EmployeeResponseDTO {
 
     private LocalDateTime modifiedAt;
 
-    private AddressEntity empAddressEntity;
+    private AddressResponseDTO empAddress;
 
     public Long getId() {
         return id;
@@ -109,12 +110,12 @@ public class EmployeeResponseDTO {
         this.modifiedAt = modifiedAt;
     }
 
-    public AddressEntity getEmpAddress() {
-        return empAddressEntity;
+    public AddressResponseDTO getEmpAddress() {
+        return empAddress;
     }
 
-    public void setEmpAddress(AddressEntity empAddressEntity) {
-        this.empAddressEntity = empAddressEntity;
+    public void setEmpAddress(AddressResponseDTO empAddress) {
+        this.empAddress = empAddress;
     }
 
     @Override
@@ -130,7 +131,7 @@ public class EmployeeResponseDTO {
                 ", empWorkEmailId='" + empWorkEmailId + '\'' +
                 ", createdAt=" + createdAt +
                 ", modifiedAt=" + modifiedAt +
-                ", empAddressEntity=" + empAddressEntity +
+                ", empAddress=" + empAddress +
                 '}';
     }
 }
